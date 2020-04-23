@@ -1,0 +1,34 @@
+﻿<Window x:Class="AssimpSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SharpGL WPF Application" Height="350" Width="525" 
+        xmlns:sharpGL="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF" KeyDown="Window_KeyDown">
+    <Grid>
+        
+        <!-- The OpenGL control provides a OpenGL drawing surface. -->
+        <sharpGL:OpenGLControl 
+            Name="openGLControl" OpenGLDraw="openGLControl_OpenGLDraw" 
+            OpenGLInitialized="openGLControl_OpenGLInitialized" Resized="openGLControl_Resized"
+            DrawFPS="True" RenderContextType="FBO" FrameRate="10"/>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="70,10,0,0">
+                <TextBlock Foreground="White" Margin="0,0,5,8">Skaliranje stuba</TextBlock>
+                <Slider Height="20" Name="scalingSlider" VerticalAlignment="Top" Width="100" Maximum="2" ValueChanged="ScalingSlider_ValueChanged"/>
+         
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="70,10,0,0">
+                <TextBlock Foreground="White" Margin="0,0,5,8">Radijus stuba</TextBlock>
+                <Slider Height="20" Name="scalingBottomRadius" VerticalAlignment="Top" Width="100" Maximum="2" ValueChanged="ScalingBottomRadius_ValueChanged"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="70,10,0,0">
+                <TextBlock Foreground="White" Margin="0,0,5,8">Brzina ubacivanja smeca</TextBlock>
+                <Slider Height="20" Name="garbageThrowing" VerticalAlignment="Top" Width="100" Maximum="2" ValueChanged="GarbageThrowing_ValueChanged"/>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
